@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'corsheaders',
 
     'users',
+    'todo',
     'rest_framework',
 
 ]
