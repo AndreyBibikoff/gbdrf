@@ -8,6 +8,9 @@ class Project(models.Model):
     link = models.CharField(verbose_name='ссылка', max_length=512)
     users = models.ManyToManyField(TodoUser)
 
+    def __str__(self):
+        return f"{self.name}"
+
 
 class Todo(models.Model):
     project = models.OneToOneField(Project, on_delete=models.CASCADE)
