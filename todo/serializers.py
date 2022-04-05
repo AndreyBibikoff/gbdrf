@@ -1,7 +1,8 @@
 from rest_framework import serializers
-from rest_framework.serializers import HyperlinkedModelSerializer, ModelSerializer, StringRelatedField
 
-from users.serializers import UserModelSerializer
+from rest_framework.serializers import ModelSerializer, StringRelatedField
+
+from users.serializers import UserModelSerializer, SimpleUserModelSerializer
 from .models import Project, Todo
 
 class SimpleProjectSerializer(ModelSerializer):
