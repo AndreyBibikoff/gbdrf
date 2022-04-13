@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 from rest_framework.viewsets import ModelViewSet
 from .models import Project, Todo
-from .serializers import ProjectModelSerializer, TodoModelSerializer
+from .serializers import ProjectModelSerializer, TodoModelSerializer, TodoModelSerializerBase
 from rest_framework.pagination import LimitOffsetPagination
 from .filters import ProjectFilter, TodoProjectFilter
 
@@ -31,3 +31,8 @@ class TodoModelViewSet(ModelViewSet):
     def perform_destroy(self, instance):
         instance.is_active = False
         instance.save()
+
+    def get_serializer_class(self):
+        if self.request.method in ['GET']:
+            return TodoModelSerializer
+        return TodoModelSerializerBase
