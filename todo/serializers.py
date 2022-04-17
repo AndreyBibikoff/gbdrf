@@ -2,11 +2,11 @@ from rest_framework import serializers
 
 from rest_framework.serializers import ModelSerializer, StringRelatedField
 
-from users.serializers import UserModelSerializer, SimpleUserModelSerializer
+from users.serializers import UserModelSerializerV1, SimpleUserModelSerializer
 from .models import Project, Todo
 
-class SimpleProjectSerializer(ModelSerializer):
 
+class SimpleProjectSerializer(ModelSerializer):
     class Meta:
         model = Project
         fields = ['name']
@@ -25,7 +25,7 @@ def get_project_name(obj):
 
 
 class TodoModelSerializer(ModelSerializer):
-    user = UserModelSerializer()
+    user = UserModelSerializerV1()
     project = SimpleProjectSerializer()
 
     class Meta:
