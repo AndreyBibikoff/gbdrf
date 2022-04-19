@@ -1,0 +1,19 @@
+
+
+{
+  allTodos{
+    	project {
+        name
+        link
+      }
+  		text
+    	created
+    	isActive
+  		user {
+        username
+        firstName
+      }
+  }
+
+
+}
