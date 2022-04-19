@@ -47,8 +47,14 @@ INSTALLED_APPS = [
     'todo',
     'rest_framework',
     'rest_framework.authtoken',
+    'graphene_django',
+
 
 ]
+GRAPHENE = {
+    "SCHEMA": "todo.schema.schema"
+    }
+
 
 AUTH_USER_MODEL = 'users.TodoUser'
 LOGIN_URL = '/auth/login/'
